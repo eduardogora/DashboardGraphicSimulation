@@ -2,8 +2,10 @@ import React, {useState} from 'react';
 import { PieChartOutlined, BarChartOutlined, LineChartOutlined } from '@ant-design/icons';
 import { Layout, Menu, theme, Button } from 'antd';
 import ReactApexChart from 'react-apexcharts';
+import DataOutput from './DataOutput.json';
   
 const { Header, Content, Footer, Sider } = Layout;
+console.log(DataOutput)
 
 const items = [BarChartOutlined, PieChartOutlined, BarChartOutlined, BarChartOutlined, LineChartOutlined].map(
   (icon, index) => ({
@@ -27,11 +29,11 @@ const App: React.FC = () => {
         series: [
         {
           name: 'Aproved Good',
-          data: [18, 20, 15, 18, 20, 15, 18, 20,]
+          data: DataOutput.Graph1.weekly.finish
         },
         {
           name: 'Rejected Product',
-          data: [2, 0, 5, 2, 0, 5, 2, 0,]
+          data: DataOutput.Graph1.weekly.reject
         }
         ],
         options: {
@@ -77,11 +79,11 @@ const App: React.FC = () => {
         series: [
         {
           name: 'Aproved Good',
-          data: [10, 0,]
+          data: DataOutput.Graph1.monthly.finish
         },
         {
           name: 'Rejected Product',
-          data: [10, 20,]
+          data: DataOutput.Graph1.monthly.reject
         }
         ],
         options: {
@@ -126,7 +128,7 @@ const App: React.FC = () => {
     },
     graph2: {
       monthly1: {
-        series: [44, 55, 13, 43, 22, 15],
+        series: [DataOutput.Graph2.monthly.fixingTime_S1[0], DataOutput.Graph2.monthly.fixingTime_S2[0], DataOutput.Graph2.monthly.fixingTime_S3[0], DataOutput.Graph2.monthly.fixingTime_S4[0], DataOutput.Graph2.monthly.fixingTime_S5[0], DataOutput.Graph2.monthly.fixingTime_S6[0]],
         options: {
           chart: {
             width: 380,
@@ -154,7 +156,7 @@ const App: React.FC = () => {
         },
       },
       monthly2: {
-        series: [44, 55, 13, 43, 22, 15],
+        series: [DataOutput.Graph2.monthly.fixingTime_S1[1], DataOutput.Graph2.monthly.fixingTime_S2[1], DataOutput.Graph2.monthly.fixingTime_S3[1], DataOutput.Graph2.monthly.fixingTime_S4[1], DataOutput.Graph2.monthly.fixingTime_S5[1], DataOutput.Graph2.monthly.fixingTime_S6[1]],
         options: {
           chart: {
             width: 380,
@@ -189,22 +191,22 @@ const App: React.FC = () => {
       weekly: {
         series: [{
           name: 'Station 1',
-          data: [44, 55, 57, 56, 61, 58, 63, 60,]
+          data: DataOutput.Graph3.weekly.Ocupancy_S1
         }, {
           name: 'Station 2',
-          data: [76, 85, 101, 98, 87, 105, 91, 114,]
+          data: DataOutput.Graph3.weekly.Ocupancy_S2
         }, {
           name: 'Station 3',
-          data: [35, 41, 36, 26, 45, 48, 52, 53]
+          data: DataOutput.Graph3.weekly.Ocupancy_S3
         }, {
           name: 'Station 4',
-          data: [35, 41, 36, 26, 45, 48, 52, 53]
+          data: DataOutput.Graph3.weekly.Ocupancy_S4
         }, {
           name: 'Station 5',
-          data: [35, 41, 36, 26, 45, 48, 52, 53]
+          data: DataOutput.Graph3.weekly.Ocupancy_S5
         }, {
           name: 'Station 6',
-          data: [35, 41, 36, 26, 45, 48, 52, 53]
+          data: DataOutput.Graph3.weekly.Ocupancy_S6
         },],
         options: {
           chart: {
@@ -258,22 +260,22 @@ const App: React.FC = () => {
       monthly: {
         series: [{
           name: 'Station 1',
-          data: [10, 20,]
+          data: DataOutput.Graph3.monthly.Ocupancy_S1
         }, {
           name: 'Station 2',
-          data: [10, 20,]
+          data: DataOutput.Graph3.monthly.Ocupancy_S2
         }, {
           name: 'Station 3',
-          data: [10, 20,]
+          data: DataOutput.Graph3.monthly.Ocupancy_S3
         }, {
           name: 'Station 4',
-          data: [10, 20,]
+          data: DataOutput.Graph3.monthly.Ocupancy_S4
         }, {
           name: 'Station 5',
-          data: [10, 20,]
+          data: DataOutput.Graph3.monthly.Ocupancy_S5
         }, {
           name: 'Station 6',
-          data: [10, 20,]
+          data: DataOutput.Graph3.monthly.Ocupancy_S6
         },],
         options: {
           chart: {
@@ -329,22 +331,22 @@ const App: React.FC = () => {
       weekly: {
         series: [{
           name: 'Station 1',
-          data: [80, 70, 60, 50, 50, 60, 70, 80,]
+          data: DataOutput.Graph4.weekly.DownTime_S1
         }, {
           name: 'Station 2',
-          data: [80, 70, 60, 50, 50, 60, 70, 80,]
+          data: DataOutput.Graph4.weekly.DownTime_S2
         }, {
           name: 'Station 3',
-          data: [80, 70, 60, 50, 50, 60, 70, 80,]
+          data: DataOutput.Graph4.weekly.DownTime_S3
         }, {
           name: 'Station 4',
-          data: [80, 70, 60, 50, 50, 60, 70, 80,]
+          data: DataOutput.Graph4.weekly.DownTime_S4
         }, {
           name: 'Station 5',
-          data: [80, 70, 60, 50, 50, 60, 70, 80,]
+          data: DataOutput.Graph4.weekly.DownTime_S5
         }, {
           name: 'Station 6',
-          data: [80, 70, 60, 50, 50, 60, 70, 80,]
+          data: DataOutput.Graph4.weekly.DownTime_S6
         },],
         options: {
           chart: {
@@ -398,22 +400,22 @@ const App: React.FC = () => {
       monthly: {
         series: [{
           name: 'Station 1',
-          data: [12, 20,]
+          data: DataOutput.Graph4.monthly.DownTime_S1
         }, {
           name: 'Station 2',
-          data: [12, 20,]
+          data: DataOutput.Graph4.monthly.DownTime_S2
         }, {
           name: 'Station 3',
-          data: [12, 20,]
+          data: DataOutput.Graph4.monthly.DownTime_S3
         }, {
           name: 'Station 4',
-          data: [12, 20,]
+          data: DataOutput.Graph4.monthly.DownTime_S4
         }, {
           name: 'Station 5',
-          data: [12, 20,]
+          data: DataOutput.Graph4.monthly.DownTime_S5
         }, {
           name: 'Station 6',
-          data: [12, 20,]
+          data: DataOutput.Graph4.monthly.DownTime_S6
         },],
         options: {
           chart: {
@@ -469,8 +471,7 @@ const App: React.FC = () => {
       daily: {
         series: [{
           name: "Desktops",
-          data: [10, 22, 13, 41, 22, 23, 21, 52, 13, 41, 42, 43, 61, 92, 13, 21, 22, 73, 41, 62, 93, 51, 22, 13, 31, 32, 33, 31, 
-                 51, 52, 43, 21, 32, 53, 61, 52, 23, 41, 22, 23, 11, 12, 13, 21, 32, 43, 51, 62, 33, 31, 32, 13, 21, 32, 43, 11, ]
+          data: DataOutput.Graph5.daily.production
         }],
         options: {
           chart: {
@@ -513,7 +514,7 @@ const App: React.FC = () => {
       weekly: {
         series: [{
           name: "Products",
-          data: [10, 22, 13, 41, 22, 23, 21, 52,]
+          data: DataOutput.Graph5.weekly.production
         }],
         options: {
           chart: {
@@ -555,7 +556,7 @@ const App: React.FC = () => {
       monthly: {
         series: [{
           name: "Products",
-          data: [10, 22,]
+          data: DataOutput.Graph5.monthly.production
         }],
         options: {
           chart: {
