@@ -649,11 +649,14 @@ const App: React.FC = () => {
               
             </div> 
             : null}
-            {graph === '2' 
-            ? <div style={{  display: "flex", alignItems: "center", justifyContent: "center"}}>
-                <ReactApexChart options={data.graph2.monthly1.options} series={data.graph2.monthly1.series} type="pie" width={380} />
-                <ReactApexChart options={data.graph2.monthly2.options} series={data.graph2.monthly2.series} type="pie" width={380} />
-              </div>  
+            {graph === '2'
+            ? <div style={{alignItems: "center", justifyContent: "center"}}>
+                <h1 >Fixing time per machine</h1>
+                <div style={{  display: "flex", alignItems: "center", justifyContent: "center"}}>
+                  <ReactApexChart options={data.graph2.monthly1.options} series={data.graph2.monthly1.series} type="pie" width={380} />
+                  <ReactApexChart options={data.graph2.monthly2.options} series={data.graph2.monthly2.series} type="pie" width={380} />
+                </div>  
+              </div>
             : null}
             {graph === '3' ?
             <div>
